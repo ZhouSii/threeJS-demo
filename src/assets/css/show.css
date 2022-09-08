@@ -1,0 +1,364 @@
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable function-url-quotes */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable prettier/prettier */
+.c-show {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease;
+  transform: translateY(0);
+}
+
+.c-show.low-position {
+  transform: translateY(60px);
+}
+
+/* show cover */
+.c-earthCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.c-earthCover__cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 375px;
+  height: 600px;
+  margin: -300px 0 0 -187.5px;
+  pointer-events: none;
+  background-image: url(../images/bg_index_cover.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.c-earthCover__tips {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 325px;
+  height: 89px;
+  margin: -35px 0 0 -162.5px;
+  background-image: url(../images/bg_tips.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.c-earthCover__hand {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 16px;
+  height: 19px;
+  margin-left: -8px;
+  background-image: url(../images/hand.png);
+  background-size: cover;
+  animation: moveHand 2s linear infinite;
+}
+
+.c-earthCover__coord {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 117px;
+  height: 18px;
+  margin: -253px 0 0 -58.5px;
+  background-image: url(../images/bg_coord.png);
+  background-repeat: no-repeat;
+  background-size: 124px 95px;
+  transition: all 0.5s ease;
+}
+
+/* show earth */
+.c-earth {
+  position: absolute;
+  top: 0; /* to let earth right at the center of cover image */
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* clouds */
+.c-clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.c-clouds__spriteContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* background video */
+.c-videoSprite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.c-videoSprite__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+/* show actions */
+.c-actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+}
+
+.c-actions__longPress {
+  position: absolute;
+  bottom: 30px;
+  left: 138px;
+  display: inline-block;
+  width: 99px;
+  height: 133px;
+  background-image: url(../images/btn_show.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.c-actions__longPress.is-active {
+  opacity: 1;
+  animation: twinkle 2s linear infinite;
+}
+
+.c-actions__longPressText {
+  position: absolute;
+  bottom: 136px;
+  left: 146px;
+  display: inline-block;
+  width: 83px;
+  height: 27px;
+  background-image: url(../images/btn_show_text.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.c-actions__longPressText.is-active {
+  opacity: 1;
+}
+
+.c-actions__xplan {
+  position: absolute;
+  right: 55px;
+  bottom: 52px;
+  display: inline-block;
+  width: 66px;
+  height: 70px;
+  background-image: url(../images/btn_end.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.c-actions__xplan.is-active {
+  opacity: 1;
+}
+
+/* end cover */
+.c-endCover {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  z-index: 30;
+  width: 100%;
+  height: 100%;
+}
+
+.c-endCover__slogan {
+  position: absolute;
+  top: 20px;
+  left: 48px;
+  width: 279px;
+  height: 127px;
+  background-image: url(../images/end_slogan.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 0;
+  animation: fadeIn 1s linear 10s;
+  animation-fill-mode: forwards;
+}
+
+.c-endCover__texts {
+  position: absolute;
+  top: 40px;
+  left: 86px;
+  width: 203px;
+  height: 83px;
+  animation: fadeOut 1s linear 9s;
+  animation-fill-mode: forwards;
+}
+
+.c-endCover__text {
+  position: absolute;
+  width: 100%;
+  background-image: url(../images/end_text.png);
+  background-size: 203px 83px;
+  opacity: 0;
+}
+
+.c-endCover__text.line1 {
+  top: 0;
+  height: 18px;
+  background-position: 0 0;
+  animation: fadeIn 1s linear 1s;
+  animation-fill-mode: forwards;
+}
+
+.c-endCover__text.line2 {
+  top: 18px;
+  height: 22px;
+  background-position: 0 -18px;
+  animation: fadeIn 1s linear 3s;
+  animation-fill-mode: forwards;
+}
+
+.c-endCover__text.line3 {
+  top: 40px;
+  height: 22px;
+  background-position: 0 -40px;
+  animation: fadeIn 1s linear 5s;
+  animation-fill-mode: forwards;
+}
+
+.c-endCover__text.line4 {
+  top: 62px;
+  height: 21px;
+  background-position: 0 -62px;
+  animation: fadeIn 1s linear 7s;
+  animation-fill-mode: forwards;
+}
+
+.c-endCover__actions {
+  position: absolute;
+  bottom: 40px;
+  left: 33px;
+  width: 309px;
+  height: 50px;
+  opacity: 0;
+  animation: fadeIn 1s linear 10s;
+  animation-fill-mode: forwards;
+}
+
+.c-endCover__backBtn {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 140px;
+  height: 50px;
+  background-image: url(../images/btn_back.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.c-endCover__registerBtn {
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 140px;
+  height: 50px;
+  background-image: url(../images/btn_register.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+/* animations */
+@keyframes moveHand {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
